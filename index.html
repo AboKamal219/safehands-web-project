@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Hands - وساطة تمريض منزلي متكاملة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/homepage.css">
+</head>
+<body>
+    <!-- start part header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hand-holding-medical"></i>
+                </div>
+                <div class="logo-text">Safe Hands</div>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#how-it-works" class="nav-link">كيف يعمل</a></li>
+                <li><a href="#services" class="nav-link">الخدمات</a></li>
+                <li><a href="#booking" class="nav-link">الحجز</a></li>
+                <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="login.html" target="_self" class="btn btn-outline" id="loginBtn">تسجيل الدخول</a>
+                <a href="register-nurse.html" target="_self" class="btn btn-primary" id="registerNurseBtn">
+                    <i class="fas fa-user-nurse"></i> انضم كممرض
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- end part header -->
+
+    <!-- start part Hero -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInUp">رعاية تمريضية منزلية <span style="color: var(--secondary);">بلمسة احترافية</span></h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">نوفر لك أفضل الممرضين والممرضات المؤهلين والمعتمدين للرعاية المنزلية. احصل على الخدمة الطبية التي تحتاجها في منزلك بكل سهولة وأمان.</p>
+                
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
+                    <button class="btn btn-primary pulse" id="requestServiceBtn" style="padding: 18px 35px;">
+                        <i class="fas fa-calendar-check"></i>  خدمة تمريض الآن
+                    </button>
+                    <button class="btn btn-icon" id="playVideoBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+
+                <div class="hero-badges animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>ممرضون معتمدون</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-clock"></i>
+                        <span>خدمة 24/7</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-home"></i>
+                        <span>رعاية في المنزل</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="floating-element">
+                    <div class="floating-icon blue">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div>
+                        <h4>200+ ممرض</h4>
+                        <p>معتمدون ومدربون</p>
+                    </div>
+                </div>
+
+                <div class="floating-element">
+                    <div class="floating-icon green">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div>
+                        <h4>5000+ خدمة</h4>
+                        <p>منفذة بنجاح</p>
+                    </div>
+                </div>
+
+                <div class="floating-element">
+                    <div class="floating-icon pink">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <h4>4.9/5 تقييم</h4>
+                        <p>من المرضى</p>
+                    </div>
+                </div>
+
+                <img src="assets/images/background-homepage.avif" alt="ممرضة تقدم الرعاية الصحية" class="main-image">
+            </div>
+        </div>
+    </section>
+    <!-- end part Hero -->
+
+    <!-- start part How the website works -->
+    <section class="section" id="how-it-works">
+        <div class="section-title">
+            <h2>كيف تعمل منصتنا</h2>
+            <p>رحلة سهلة وآمنة من الطلب إلى الرعاية المنزلية المتكاملة</p>
+        </div>
+
+            <div class="tab-content active" id="patient-process">
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>إنشاء حساب</h3>
+                        <p>سجل بياناتك الشخصية وأنشئ حساباً على المنصة لتتمكن من طلب الخدمات ومتابعة الحجوزات.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3>اختر الخدمة</h3>
+                        <p>اختر من بين مجموعة واسعة من خدمات التمريض المنزلي التي تناسب احتياجاتك الصحية.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>حدد الموقع والموعد</h3>
+                        <p>أدخل عنوانك واختر الوقت المناسب لزيارة الممرض، مع إمكانية تحديد مستوى الاستعجال.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>اختر الممرض المناسب</h3>
+                        <p>اطلع على قائمة الممرضين المتاحين مع تقييماتهم وخبراتهم واختر الأفضل لخدمتك.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>تأكيد الحجز</h3>
+                        <p>راجع تفاصيل الطلب وأكده، ثم تابع حالة حجزك من خلال لوحة التحكم الشخصية.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>تقييم الخدمة</h3>
+                        <p>بعد انتهاء الزيارة، قيم جودة الخدمة وساعدنا في تحسين تجربة الرعاية للمرضى الآخرين.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="nurse-process">
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3>التسجيل والتحقق</h3>
+                        <p>سجل بياناتك المهنية والشخصية وارفع مستندات الترخيص والشهادات للتحقق منها.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>اعتماد الحساب</h3>
+                        <p>سيقوم فريقنا بمراجعة مستنداتك والتحقق من مؤهلاتك خلال 24-48 ساعة.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>تحديد الجدول الزمني</h3>
+                        <p>حدد أوقات العمل المتاحة والمناطق الجغرافية التي يمكنك تغطيتها.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>استقبال الطلبات</h3>
+                        <p>استقبل عروض العمل المناسبة واطلع على تفاصيل كل طلب قبل قبوله.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>تنفيذ الزيارة</h3>
+                        <p>قم بزيارة المريض في الموعد المحدد وقدم الخدمة التمريضية المطلوبة باحترافية.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>تسجيل الزيارة واستلام الأجر</h3>
+                        <p>سجل انتهاء الزيارة واستلم أجرك عبر المنصة مع إمكانية الحصول على تقييمات إيجابية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end part How the website works -->
+
+    <!-- start part services -->
+    <section class="section services" id="services">
+        <div class="section-title">
+            <h2>خدمات التمريض المتاحة</h2>
+            <p>نقدم مجموعة واسعة من الخدمات التمريضية المنزلية لتلبية جميع احتياجاتك</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-syringe"></i>
+                </div>
+                <h3>إعطاء الحقن</h3>
+                <p>حقن عضلية، وريدية، أو تحت الجلد بأمان تام بواسطة ممرضين مؤهلين مع تعقيم كامل.</p>
+                <div class="service-price">
+                    75 <span>جنية/حقنة</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-user-nurse"></i>
+                </div>
+                <h3>رعاية المسنين</h3>
+                <p>رعاية متكاملة لكبار السن في المنزل مع مراعاة الاحتياجات الصحية والنفسية الخاصة.</p>
+                <div class="service-price">
+                    150 <span>جنية/ساعة</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-band-aid"></i>
+                </div>
+                <h3>تغيير الجروح</h3>
+                <p>العناية بالجروح وتغيير الضمادات بطريقة معقمة وآمنة مع متابعة التئام الجرح.</p>
+                <div class="service-price">
+                    100 <span>جنية/زيارة</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>تركيب كانيولا</h3>
+                <p>تركيب محاليل وريدية وتغييرها من قبل ممرضين متخصصين مع مراقبة العلامات الحيوية.</p>
+                <div class="service-price">
+                    120 <span>جنية/تركيب</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>فحص العلامات الحيوية</h3>
+                <p>قياس الضغط، السكر، الحرارة، النبض والتنفس مع تسجيل النتائج وتقديم التوصيات.</p>
+                <div class="service-price">
+                    60 <span>جنية/فحص</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <h3>إدارة الأدوية</h3>
+                <p>تنظيم وجرعات الأدوية ومتابعة المواعيد لتناولها مع شرح التعليمات للمريض.</p>
+                <div class="service-price">
+                    80 <span>جنية/زيارة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end part services -->
+
+    <!-- start part Booking process-->
+    <section class="section" id="booking">
+        <div class="section-title">
+            <h2>عملية الحجز خطوة بخطوة</h2>
+            <p>تجربة حجز سهلة ومباشرة لضمان راحتك وسلامتك</p>
+        </div>
+
+        <div class="booking-steps">
+            <div class="booking-step">
+                <div class="step-circle">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <h3>إدخال البيانات</h3>
+                <p>أدخل بياناتك الشخصية والعنوان والحالة الصحية الأساسية.</p>
+            </div>
+
+            <div class="booking-step">
+                <div class="step-circle">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>اختيار الخدمة والتوقيت</h3>
+                <p>اختر الخدمة المطلوبة والوقت المناسب ومستوى الاستعجال.</p>
+            </div>
+
+            <div class="booking-step">
+                <div class="step-circle">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>اختيار الممرض</h3>
+                <p>اختر من بين الممرضين المتاحين بناءً على الخبرة والتقييمات.</p>
+            </div>
+
+            <div class="booking-step">
+                <div class="step-circle">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>الدفع والتأكيد</h3>
+                <p>اكمل عملية الدفع وتأكد من حجزك عبر البريد أو الرسائل النصية.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <button class="btn btn-primary btn-lg" id="startBookingBtn" style="padding: 20px 45px; font-size: 18px;">
+                <i class="fas fa-play-circle"></i> ابدأ عملية الحجز الآن
+            </button>
+        </div>
+    </section>
+    <!-- end part Booking process-->
+
+    <!-- start part Booking Form -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>حجز خدمة تمريض منزلية</h2>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="form-step active" id="step1">
+                    <h3 style="margin-bottom: 25px;">البيانات الشخصية</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientName">الاسم الكامل</label>
+                            <input type="text" id="patientName" class="form-control" placeholder="أدخل اسمك الكامل">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="patientPhone">رقم الهاتف</label>
+                            <input type="tel" id="patientPhone" class="form-control" placeholder="01XXXXXXXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientAge">العمر</label>
+                            <input type="number" id="patientAge" class="form-control" placeholder="أدخل عمرك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="patientGender">الجنس</label>
+                            <select id="patientGender" class="form-control">
+                                <option value="">اختر الجنس</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientAddress">العنوان التفصيلي</label>
+                        <textarea id="patientAddress" class="form-control" rows="3" placeholder="أدخل عنوانك التفصيلي مع الرمز البريدي إن أمكن"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medicalNotes">ملاحظات طبية (اختياري)</label>
+                        <textarea id="medicalNotes" class="form-control" rows="3" placeholder="أي حساسيات، أمراض مزمنة، أدوية تتناولها..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" disabled>السابق</button>
+                        <button class="btn btn-primary" id="nextToStep2">التالي</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step2">
+                    <h3 style="margin-bottom: 25px;">تفاصيل الخدمة المطلوبة</h3>
+                    
+                    <div class="form-group">
+                        <label for="serviceType">نوع الخدمة</label>
+                        <select id="serviceType" class="form-control">
+                            <option value="">اختر نوع الخدمة</option>
+                            <option value="حقنة">إعطاء حقنة - 75 جنية</option>
+                            <option value="رعاية المسنين">رعاية المسنين - 150 جنية/ساعة</option>
+                            <option value="تغيير الجروح">تغيير الجروح - 100 جنية</option>
+                            <option value="تركيب كانيولا">تركيب كانيولا - 120 جنية</option>
+                            <option value="فحص العلامات الحيوية">فحص العلامات الحيوية - 60 جنية</option>
+                            <option value="إدارة الأدوية">إدارة الأدوية - 80 جنية</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceDate">تاريخ الخدمة</label>
+                            <input type="date" id="serviceDate" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceTime">وقت الخدمة</label>
+                            <select id="serviceTime" class="form-control">
+                                <option value="">اختر الوقت</option>
+                                <option value="08:00-10:00">8:00 ص - 10:00 ص</option>
+                                <option value="10:00-12:00">10:00 ص - 12:00 م</option>
+                                <option value="12:00-14:00">12:00 م - 2:00 م</option>
+                                <option value="14:00-16:00">2:00 م - 4:00 م</option>
+                                <option value="16:00-18:00">4:00 م - 6:00 م</option>
+                                <option value="18:00-20:00">6:00 م - 8:00 م</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceDuration">مدة الخدمة (بالساعات)</label>
+                        <select id="serviceDuration" class="form-control">
+                            <option value="1">1 ساعة</option>
+                            <option value="2">2 ساعات</option>
+                            <option value="3">3 ساعات</option>
+                            <option value="4">4 ساعات</option>
+                            <option value="8">يوم كامل (8 ساعات)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgencyLevel">مستوى الاستعجال</label>
+                        <select id="urgencyLevel" class="form-control">
+                            <option value="normal">عادي (خلال 24 ساعة)</option>
+                            <option value="medium">متوسط (خلال 12 ساعة)</option>
+                            <option value="high">عاجل (خلال 6 ساعات)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" id="backToStep1">السابق</button>
+                        <button class="btn btn-primary" id="nextToStep3">التالي</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                    <h3 style="margin-bottom: 25px;">اختيار الممرض المناسب</h3>
+                    <p style="margin-bottom: 20px; color: var(--gray);">اختر الممرض المناسب لخدمتك بناءً على الخبرة والتقييمات والموقع</p>
+                    
+                    <div class="nurses-grid" id="nursesList">
+                        <!-- سيتم تعبئة هذا القسم بالممرضين عبر الجافاسكريبت -->
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" id="backToStep2">السابق</button>
+                        <button class="btn btn-primary" id="nextToStep4">التالي</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step4">
+                    <h3 style="margin-bottom: 25px;">تأكيد الحجز والدفع</h3>
+                    
+                    <div class="card" style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px;">ملخص الطلب</h4>
+                        
+                        <div class="form-row" style="margin-bottom: 15px;">
+                            <div><strong>الخدمة:</strong> <span id="summaryService">-</span></div>
+                            <div><strong>التاريخ:</strong> <span id="summaryDate">-</span></div>
+                        </div>
+                        
+                        <div class="form-row" style="margin-bottom: 15px;">
+                            <div><strong>الممرض:</strong> <span id="summaryNurse">-</span></div>
+                            <div><strong>المدة:</strong> <span id="summaryDuration">-</span> ساعة</div>
+                        </div>
+                        
+                        <div class="form-row" style="margin-bottom: 15px;">
+                            <div><strong>العنوان:</strong> <span id="summaryAddress">-</span></div>
+                            <div><strong>الاستعجال:</strong> <span id="summaryUrgency">-</span></div>
+                        </div>
+                        
+                        <div style="background: var(--light-gray); padding: 20px; border-radius: var(--radius-sm); margin-top: 20px;">
+                            <div class="form-row" style="font-size: 1.2rem;">
+                                <div><strong>التكلفة الإجمالية:</strong></div>
+                                <div style="color: var(--primary); font-weight: 800; font-size: 1.5rem;" id="summaryPrice">0 جنية</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>طريقة الدفع</label>
+                        <div style="display: flex; gap: 15px; margin-top: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="payment" value="cash" checked>
+                                <span>كاش عند الاستلام</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="payment" value="card">
+                                <span>بطاقة ائتمان</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="payment" value="wallet">
+                                <span>محفظة إلكترونية</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialInstructions">تعليمات إضافية (اختياري)</label>
+                        <textarea id="specialInstructions" class="form-control" rows="3" placeholder="أي تعليمات خاصة للممرض حول طريقة التعامل مع المريض أو أدوية معينة..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" id="backToStep3">السابق</button>
+                        <button class="btn btn-success" id="confirmBooking" style="background: linear-gradient(135deg, var(--success), #0DA674);">
+                            <i class="fas fa-check-circle"></i> تأكيد الحجز والدفع
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- إشعارات -->
+    <div class="notification" id="notification">
+        <div class="notification-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <h4 id="notificationTitle">تم بنجاح</h4>
+            <p id="notificationMessage">تم تنفيذ العملية بنجاح</p>
+        </div>
+    </div>
+    <!-- end part Booking Form -->
+
+    <!-- زر العودة للأعلى -->
+    <div class="scroll-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- start part footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Safe Hands</h3>
+                <p>منصة وساطة للتمريض المنزلي تهدف إلى ربط المرضى المحتاجين للرعاية الصحية مع الممرضين المؤهلين والمعتمدين في مكان واحد.</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/?locale=ar_AR" target="_blank" class="social-link" ><i class="fab fa-facebook-f"> </i></a>
+                    <a href="https://x.com/search?q=%D8%AA%D9%88%D9%8A%D8%AA%D8%B1&lang=ar" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/login/ar" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                    <li><a href="#how-it-works"><i class="fas fa-chevron-left"></i> كيف يعمل</a></li>
+                    <li><a href="#services" ><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+                    <li><a href="#booking" ><i class="fas fa-chevron-left"></i> الحجز</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>الممرضون</h3>
+                <ul class="footer-links">
+                    <li><a href="#" target="_blank"><i class="fas fa-chevron-left" ></i> انضم إلينا</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-chevron-left"></i> شروط التسجيل</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-chevron-left"></i> المستندات المطلوبة</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-chevron-left"></i> دليل الممرض</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة للممرضين</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+20 123 456 7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@SafeHands.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>القاهرة، مصر</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Safe Hands. جميع الحقوق محفوظة. | تم التصميم والتطوير بواسطة فريق Safe Hands</p>
+        </div>
+    </footer>
+    <!-- end part footer -->
+</body>
+</html>

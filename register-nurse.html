@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Hands - Nurse Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/register-nurse.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-hand-holding-medical"></i> Safe Hands
+            </div>
+            <nav class="desktop-nav">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="#">الخدمات</a>
+                <a href="#">كيف يعمل</a>
+                <a href="#">المدونة</a>
+                <a href="#">عنّا</a>
+                <a href="#">اتصل بنا</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-text">تسجيل الدخول</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <h1>انضم إلى منصة Safe Hands كممرض</h1>
+        <p>كن جزءًا من شبكتنا المؤهلة للممرضين وابدأ في تقديم خدمات التمريض المنزلي</p>
+    </section>
+
+    
+        </div>
+
+        <form class="main-form">
+            <h2 class="section-title">البيانات الشخصية الأساسية</h2>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>الاسم الكامل *</label>
+                    <input type="text" placeholder="أدخل الاسم الكامل">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>الرقم القومي *</label>
+                    <input type="text" placeholder="أدخل الرقم القومي 14 رقمًا">
+                    <small class="hint">يجب أن يتكون الرقم القومي من 14 رقمًا</small>
+                </div>
+            </div>
+
+            <div class="form-row split">
+                <div class="form-group">
+                    <label>رقم الهاتف *</label>
+                    <input type="tel" placeholder="01XXXXXXXXX" style="direction: ltr; text-align: right;">
+                </div>
+                <div class="form-group">
+                    <label>البريد الإلكتروني *</label>
+                    <input type="email" placeholder="example@email.com" style="direction: ltr; text-align: right;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>العنوان التفصيلي *</label>
+                <textarea rows="2" placeholder="أدخل العنوان التفصيلي مع المدينة والمنطقة"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>صورة شخصية *</label>
+                <div class="upload-box small-upload">
+                    <i class="fa-solid fa-cloud-arrow-up icon-up"></i>
+                    <p>اسحب وأفلت الصورة هنا أو انقر للرفع</p>
+                    <span class="file-info">الحجم الأقصى: 5MB</span>
+                </div>
+            </div>
+            <hr class="divider">
+
+            <h2 class="section-title">المؤهلات والشهادات المهنية</h2>
+
+            <div class="form-group">
+                <label>الرخصة المهنية *</label>
+                <div class="upload-box">
+                    <i class="fa-solid fa-file-medical icon-up"></i>
+                    <p>اسحب وأفلت الرخصة المهنية هنا أو انقر للرفع</p>
+                    <span class="file-info">PDF, JPG, PNG - الحجم الأقصى: 10MB</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>شهادات التخصص والخبرة</label>
+                <div class="upload-box">
+                    <i class="fa-solid fa-graduation-cap icon-up"></i>
+                    <p>اسحب وأفلت الشهادات هنا أو انقر للرفع</p>
+                    <span class="file-info blue-text">يمكنك رفع عدة ملفات - الحجم الأقصى لكل ملف: 10MB</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>سنوات الخبرة *</label>
+                <select>
+                    <option>اختر عدد سنوات الخبرة</option>
+                    <option>1-3 سنوات</option>
+                    <option>3-5 سنوات</option>
+                    <option>+5 سنوات</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>التخصصات والخدمات المقدمة *</label>
+                <div class="multi-select-box">
+                    <div class="select-item selected">إعطاء الحقن</div>
+                    <div class="select-item">رعاية المسنين</div>
+                    <div class="select-item">تغيير الجروح والضمادات</div>
+                    <div class="select-item">تركيب كانيولا ومحاليل وريدية</div>
+                    <div class="select-item">فحص العلامات الحيوية</div>
+                    <div class="select-item">إدارة الأدوية ومتابعة الجرعات</div>
+                </div>
+                <small class="hint">اضغط مع الاستمرار على زر Ctrl (أو Cmd في Mac) لتحديد عدة خيارات</small>
+            </div>
+            <hr class="divider">
+
+            <h2 class="section-title">تفاصيل العمل والجدول الزمني</h2>
+            
+            <label class="sub-label">جدول العمل المتاح *</label>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <div class="card-icon sun"><i class="fa-solid fa-sun"></i></div>
+                    <h3>الفترة الصباحية</h3>
+                    <p>8 ص - 2 م</p>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="schedule-card">
+                    <div class="card-icon sunset"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <h3>الفترة المسائية</h3>
+                    <p>2 م - 8 م</p>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="schedule-card">
+                    <div class="card-icon moon"><i class="fa-solid fa-moon"></i></div>
+                    <h3>الفترة الليلية</h3>
+                    <p>8 م - 8 ص</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>المناطق الجغرافية المغطاة *</label>
+                <textarea rows="2" placeholder="أدخل المناطق والمدن التي يمكنك العمل فيها، مفصولة بفواصل"></textarea>
+                <small class="hint">مثال: القاهرة، الجيزة، المعادي، مدينة نصر</small>
+            </div>
+
+            <div class="form-group">
+                <label>سرعة الاستجابة المتوقعة *</label>
+                <select>
+                    <option>اختر سرعة الاستجابة</option>
+                    <option>خلال ساعة</option>
+                    <option>خلال 4 ساعات</option>
+                    <option>خلال 24 ساعة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>السعر بالساعة (جنية مصري) *</label>
+                <input type="number" placeholder="أدخل السعر بالساعة">
+                <small class="hint">يتراوح السعر المقترح بين 50-500 جنية مصري حسب الخبرة والتخصص</small>
+            </div>
+            <hr class="divider">
+
+            <h2 class="section-title">مراجعة البيانات والتأكيد</h2>
+            
+            <div class="review-section">
+                <div class="review-item">
+                    <h4>ملخص بيانات التسجيل</h4>
+                    <div class="dummy-line"><span>البيانات الشخصية</span></div>
+                    <div class="dummy-line"><span>المؤهلات والشهادات</span></div>
+                    <div class="dummy-line"><span>تفاصيل العمل</span></div>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">أوافق على <a href="#">الشروط والأحكام</a> و <a href="#">سياسة الخصوصية</a> للمنصة *</label>
+            </div>
+
+            <div class="info-alert">
+                <i class="fa-solid fa-circle-info"></i>
+                بعد تقديم الطلب، سيتم مراجعة بياناتك من قبل فريق الإدارة خلال 24-48 ساعة. ستتلقى إشعارًا عند تفعيل حسابك.
+            </div>
+
+            <div class="action-buttons space-between">
+                <button type="button" class="btn-prev">السابق</button>
+                <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> إرسال طلب التسجيل</button>
+            </div>
+
+        </form>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <h3>Safe Hands</h3>
+                <p>منصة وساطة للتمريض المنزلي تهدف إلى ربط المرضى المحتاجين للرعاية الصحية مع الممرضين المؤهلين والمعتمدين في مكان واحد.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> الرئيسية</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> الخدمات</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> كيف يعمل</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> المدونة</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>للممرضين</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> انضم إلينا</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> شروط التسجيل</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> المستندات المطلوبة</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i> الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>اتصل بنا</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <span>الهاثف</span>
+                            <span dir="ltr">+20 123 456 7890</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span>البريد الإلكتروني</span>
+                            <span>info@SafeHands.com</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <span>العنوان</span>
+                            <span>القاهرة، مصر</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Safe Hands. جميع الحقوق محفوظة | تم التصميم والتطوير بواسطة فريق Safe Hands</p>
+        </div>
+    </footer>
+</body>
+</html>
