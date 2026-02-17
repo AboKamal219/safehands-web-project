@@ -135,6 +135,14 @@ body {
     justify-content: center;
     gap: 10px;
     text-decoration: none;
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
 }
 .btn-primary {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -144,6 +152,10 @@ body {
 .btn-primary:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(45, 91, 255, 0.4);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
 }
 .btn-outline {
     background: transparent;
@@ -155,6 +167,10 @@ body {
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(45, 91, 255, 0.2);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
 }
 .btn-icon {
     width: 50px;
@@ -170,6 +186,10 @@ body {
     background: var(--primary);
     color: white;
     transform: translateY(-5px) rotate(10deg);
+    -webkit-transform: translateY(-5px) rotate(10deg);
+    -moz-transform: translateY(-5px) rotate(10deg);
+    -ms-transform: translateY(-5px) rotate(10deg);
+    -o-transform: translateY(-5px) rotate(10deg);
 }
 .mobile-menu-btn {
     display: none;
@@ -243,10 +263,22 @@ body {
     box-shadow: var(--shadow);
     font-weight: 600;
     transition: var(--transition);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
 }
 .badge:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
 }
 .badge i {
     color: var(--secondary);
@@ -266,6 +298,11 @@ body {
     gap: 15px;
     z-index: 3;
     animation: float 3s ease-in-out infinite;
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+    -webkit-animation: float 3s ease-in-out infinite;
 }
 .floating-element:nth-child(1) {
     top: -30px;
@@ -283,8 +320,8 @@ body {
     animation-delay: 2s;
 }
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    0%, 100% { transform: translateY(0); -webkit-transform:; -moz-transform:; -ms-transform:; -o-transform:; }
+    50% { transform: translateY(-15px); -webkit-transform: translateY(-15px); -moz-transform: translateY(-15px); -ms-transform: translateY(-15px); -o-transform: translateY(-15px); }
 }
 .floating-icon {
     width: 50px;
@@ -311,9 +348,25 @@ body {
     box-shadow: 0 25px 50px rgba(45, 91, 255, 0.15);
     transform: perspective(1000px) rotateY(-10deg);
     transition: var(--transition);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+    -webkit-transform: perspective(1000px) rotateY(-10deg);
+    -moz-transform: perspective(1000px) rotateY(-10deg);
+    -ms-transform: perspective(1000px) rotateY(-10deg);
+    -o-transform: perspective(1000px) rotateY(-10deg);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
 }
 .main-image:hover {
     transform: perspective(1000px) rotateY(0deg);
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+    -moz-transform: perspective(1000px) rotateY(0deg);
+    -ms-transform: perspective(1000px) rotateY(0deg);
+    -o-transform: perspective(1000px) rotateY(0deg);
 }
 /* end part Hero */
 
@@ -342,6 +395,10 @@ body {
     height: 5px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     border-radius: 5px;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
 }
 .section-title p {
     font-size: 1.2rem;
@@ -401,10 +458,13 @@ body {
 .tab-content.active {
     display: block;
 }
-.steps-grid {
+.steps-grid,.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 .step-card {
     background: white;
@@ -462,14 +522,6 @@ body {
 /* start part services */
 .services {
     background: linear-gradient(135deg, #F8FAFF 0%, #F0F7FF 100%);
-}
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 .service-card {
     background: white;

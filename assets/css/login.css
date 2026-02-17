@@ -137,7 +137,7 @@
             color: var(--white);
             text-align: center;
             padding-top: 80px;
-            padding-bottom: 180px; /* Extra padding to allow card overlap */
+            padding-bottom: 140px; /* Extra padding to allow card overlap */
         }
 
         .page-header h1 {
@@ -153,7 +153,7 @@
 
         /* --- Login Card Section --- */
         .login-section {
-            margin-top: -120px; /* Pulls the card up into the blue header */
+            margin-top: -50px; /* Pulls the card up into the blue header */
             margin-bottom: 80px;
             position: relative;
             z-index: 10;
