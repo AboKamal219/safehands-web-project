@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Hands - حجز خدمة تمريضية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
+    <link rel="icon" href="assets/images/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- لوحة المعلومات الجانبية -->
+        <div class="info-panel">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hand-holding-medical"></i>
+                </div>
+                <div class="logo-text">Safe Hands</div>
+            </a>
+
+            <h2 class="info-title">حجز خدمة تمريضية</h2>
+            <p class="info-text">
+                احجز خدمة التمريض المنزلي بسهولة. اختر الخدمة، حدد الموعد، وسيصل إليك الممرض في الوقت المحدد.
+            </p>
+
+            <ul class="features-list">
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>حجز سريع</h4>
+                        <p>احجز في دقائق</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>ممرضون معتمدون</h4>
+                        <p>مرخصين ومؤهلين</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>في منزلك</h4>
+                        <p>رعاية في المنزل</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- لوحة الحجز الرئيسية -->
+        <div class="booking-panel">
+            <div class="booking-header">
+                <h1 class="booking-title">حجز خدمة جديدة</h1>
+                <p class="booking-subtitle">املأ النموذج التالي لحجز خدمة التمريض المنزلي</p>
+            </div>
+
+            <!-- رسائل التنبيه -->
+            <div class="alert success" id="successAlert">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <strong>تم الحجز بنجاح</strong>
+                    <p>سيتم تأكيد الحجز عبر البريد الإلكتروني</p>
+                </div>
+            </div>
+
+            <div class="alert error" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                    <strong>خطأ في الحجز</strong>
+                    <p id="errorMessage">يرجى ملء جميع الحقول المطلوبة</p>
+                </div>
+            </div>
+
+            <!-- نموذج الحجز -->
+            <form class="booking-form" id="bookingForm">
+                <div class="form-row">
+                    <!-- التاريخ -->
+                    <div class="form-group">
+                        <label for="bookingDate" class="form-label required">التاريخ</label>
+                        <input type="date" id="bookingDate" class="form-control" required>
+                    </div>
+
+                    <!-- الوقت -->
+                    <div class="form-group">
+                        <label class="form-label required">الوقت</label>
+                        <div class="time-selector">
+                            <div class="time-option" data-time="08:00">8:00 ص</div>
+                            <div class="time-option" data-time="10:00">10:00 ص</div>
+                            <div class="time-option" data-time="12:00">12:00 م</div>
+                            <div class="time-option" data-time="14:00">2:00 م</div>
+                            <div class="time-option" data-time="16:00">4:00 م</div>
+                            <div class="time-option" data-time="18:00">6:00 م</div>
+                        </div>
+                        <input type="hidden" id="bookingTime" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- نوع الخدمة -->
+                    <div class="form-group">
+                        <label for="serviceType" class="form-label required">نوع الخدمة</label>
+                        <select id="serviceType" class="form-control select" required>
+                            <option value="">اختر خدمة التمريض</option>
+                            <option value="حقنة">إعطاء حقنة - 75 جنية</option>
+                            <option value="رعاية المسنين">رعاية المسنين - 150 جنية/ساعة</option>
+                            <option value="تغيير الجروح">تغيير الجروح - 100 جنية</option>
+                            <option value="تركيب كانيولا">تركيب كانيولا - 120 جنية</option>
+                            <option value="فحص العلامات الحيوية">فحص العلامات الحيوية - 60 جنية</option>
+                            <option value="إدارة الأدوية">إدارة الأدوية - 80 جنية</option>
+                            <option value="other">خدمة أخرى مخصصة</option>
+                        </select>
+                    </div>
+
+                    <!-- عدد المرضى -->
+                    <div class="form-group">
+                        <label class="form-label required">عدد المرضى</label>
+                        <div class="people-selector">
+                            <button type="button" class="people-btn" id="decreasePeople">-</button>
+                            <div class="people-count" id="peopleCount">1</div>
+                            <button type="button" class="people-btn" id="increasePeople">+</button>
+                        </div>
+                        <input type="hidden" id="people" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- الاسم الأول -->
+                    <div class="form-group">
+                        <label for="firstName" class="form-label required">الاسم الأول</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="أدخل الاسم الأول" required>
+                    </div>
+
+                    <!-- الاسم الأخير -->
+                    <div class="form-group">
+                        <label for="lastName" class="form-label required">الاسم الأخير</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="أدخل الاسم الأخير" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- البريد الإلكتروني -->
+                    <div class="form-group">
+                        <label for="email" class="form-label required">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <!-- رقم الهاتف (المضاف) -->
+                    <div class="form-group">
+                        <label for="phone" class="form-label required">رقم الهاتف</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="01XXXXXXXXX" required>
+                        <div class="form-note">رقم هاتف مصري (11 رقم)</div>
+                    </div>
+                </div>
+
+                <!-- العمر -->
+                <div class="form-group">
+                    <label for="patientAge" class="form-label required">عمر المريض</label>
+                    <input type="number" id="patientAge" class="form-control" placeholder="أدخل العمر" min="1" max="120" required>
+                </div>
+
+                <!-- العنوان -->
+                <div class="form-group">
+                    <label for="address" class="form-label required">العنوان</label>
+                    <textarea id="address" class="form-control" rows="2" placeholder="أدخل العنوان بالتفصيل" required></textarea>
+                </div>
+
+                <!-- ملاحظات -->
+                <div class="form-group">
+                    <label for="comments" class="form-label">ملاحظات إضافية (اختياري)</label>
+                    <textarea id="comments" class="form-control" rows="2" placeholder="أي تعليمات خاصة أو ملاحظات"></textarea>
+                </div>
+
+                <!-- خدمة مخصصة -->
+                <div class="custom-service" id="customServiceSection" style="display: none;">
+                    <h4>وصف الخدمة المخصصة</h4>
+                    <textarea id="customService" placeholder="صف الخدمة المطلوبة بالتفصيل..."></textarea>
+                </div>
+
+                <!-- النشرة الإخبارية -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" checked>
+                    <label for="newsletter">اشترك في النشرة الإخبارية للحصول على عروض خاصة</label>
+                </div>
+
+                <!-- ملخص السعر -->
+                <div class="price-summary">
+                    <div class="price-item">
+                        <span>تكلفة الخدمة</span>
+                        <span id="servicePrice">0 جنية</span>
+                    </div>
+                    <div class="price-item">
+                        <span>رسوم الخدمة</span>
+                        <span id="serviceFee">0 جنية</span>
+                    </div>
+                    <div class="price-total">
+                        <span>المبلغ الإجمالي</span>
+                        <span id="totalPrice">0 جنية</span>
+                    </div>
+                </div>
+
+                <!-- مؤشر التحميل -->
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>جاري معالجة الحجز...</p>
+                </div>
+
+                <!-- زر الحجز -->
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <i class="fas fa-calendar-check"></i> تأكيد الحجز
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>
