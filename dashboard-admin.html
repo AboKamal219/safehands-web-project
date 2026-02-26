@@ -18,7 +18,6 @@
                 </div>
                 <div class="logo-text">Safe Hands</div>
             </a>
-
             <ul class="nav-menu">
                 <li class="nav-item">
                     <button class="nav-link active" data-section="overview">
@@ -57,9 +56,7 @@
                     </button>
                 </li>
             </ul>
-
             <div class="nav-divider"></div>
-
             <div class="nav-menu">
                 <li class="nav-item">
                     <button class="nav-link" data-section="help">
@@ -74,7 +71,6 @@
                     </button>
                 </li>
             </div>
-
             <div class="user-profile">
                 <div class="profile-info">
                     <div class="profile-avatar">أ</div>
@@ -93,20 +89,17 @@
                     <h1 id="pageTitle">نظرة عامة</h1>
                     <p id="pageSubtitle">مرحباً أحمد، هذه نظرة عامة على النظام</p>
                 </div>
-
                 <div class="header-actions">
                     <div class="search-box">
                         <input type="text" placeholder="بحث في جميع البيانات..." id="globalSearch">
                         <i class="fas fa-search"></i>
-                    </div>
-                    
+                    </div>           
                     <!-- زر الإشعارات -->
                     <div class="notification-container">
                         <button class="notification-btn" id="notificationBtn">
                             <i class="far fa-bell"></i>
-                            <span class="notification-badge" id="notificationCount">3</span>
-                        </button>
-                        
+                            <span class="notification-badge" id="notificationCount">1</span>
+                        </button>  
                         <!-- نافذة الإشعارات -->
                         <div class="notification-dropdown" id="notificationDropdown">
                             <div class="notification-header">
@@ -296,7 +289,6 @@
                             </div>
                         </div>
                     </div>
-
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -468,7 +460,129 @@
                     </div>
                     
                     <div class="faq-container" id="faqContainer">
-                        <!-- سيتم تعبئة الأسئلة الشائعة هنا -->
+                        <!-- السؤال 1 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني إضافة ممرض جديد؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يمكنك إضافة ممرض جديد من خلال:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>الدخول إلى قسم "الممرضون" من القائمة الجانبية</li>
+                                    <li>الضغط على زر "إضافة ممرض" في أعلى الصفحة</li>
+                                    <li>تعبئة البيانات المطلوبة (الاسم، التخصص، رقم الهاتف، etc)</li>
+                                    <li>الضغط على زر "حفظ" لإتمام الإضافة</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يتم حساب إيرادات الممرضين؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يتم حساب إيرادات الممرضين بناءً على:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li>إجمالي قيمة الطلبات المكتملة</li>
+                                    <li>خصم نسبة المنصة (١٥٪ من قيمة الطلب)</li>
+                                    <li>إضافة الحوافز والمكافآت إن وجدت</li>
+                                </ul>
+                                <p style="margin-top: 10px;"><strong>مثال:</strong> طلب بقيمة ١٠٠ جنيه → ٨٥ جنيه للممرض</p>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>ماذا أفعل إذا كان هناك طلب ملغي؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                في حالة إلغاء الطلب، اتبع الخطوات التالية:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>التواصل مع المريض لمعرفة سبب الإلغاء</li>
+                                    <li>التواصل مع الممرض لتأكيد الإلغاء</li>
+                                    <li>تسجيل سبب الإلغاء في النظام</li>
+                                    <li>في حالة الإلغاء قبل التنفيذ، لا يتم خصم أي رسوم</li>
+                                    <li>في حالة الإلغاء بعد التنفيذ، يتم احتساب قيمة الخدمة المقدمة</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني تصدير التقارير؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يمكنك تصدير التقارير بصيغ متعددة:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li><strong>PDF:</strong> للتقارير الرسمية والعروض التقديمية</li>
+                                    <li><strong>Excel:</strong> لتحليل البيانات وإجراء العمليات الحسابية</li>
+                                    <li><strong>CSV:</strong> لاستيراد البيانات في أنظمة أخرى</li>
+                                </ul>
+                                <p style="margin-top: 10px;">كل ما عليك هو الضغط على زر "تصدير" في قسم التقارير واختيار الصيغة المناسبة.</p>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>ما هي صلاحيات مدير النظام؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                صلاحيات مدير النظام تشمل:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li>إدارة المستخدمين (إضافة، تعديل، حذف)</li>
+                                    <li>التحكم في إعدادات النظام العامة</li>
+                                    <li>عرض جميع التقارير والإحصائيات</li>
+                                    <li>إدارة الطلبات وتحديث حالتها</li>
+                                    <li>التحكم في نسب المنصة والعمولات</li>
+                                    <li>الرد على استفسارات الدعم الفني</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 6 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني تغيير كلمة المرور؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                لتغيير كلمة المرور:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>اضغط على صورة الملف الشخصي في الشريط الجانبي</li>
+                                    <li>اختر "تغيير كلمة المرور" من القائمة</li>
+                                    <li>أدخل كلمة المرور الحالية</li>
+                                    <li>أدخل كلمة المرور الجديدة (٨ أحرف على الأقل)</li>
+                                    <li>تأكيد كلمة المرور الجديدة</li>
+                                    <li>اضغط على "حفظ"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 7 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>متى يتم دفع مستحقات الممرضين؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>نظام الدفع كالتالي:</p>
+                                <ul style="margin-top: 5px; margin-right: 20px;">
+                                    <li><strong>الدفع الأسبوعي:</strong> كل يوم سبت للمستحقات حتى الخميس السابق</li>
+                                    <li><strong>الحد الأدنى للسحب:</strong> ٥٠٠ جنيه</li>
+                                    <li><strong>طرق الدفع:</strong> تحويل بنكي، محفظة إلكترونية، فودافون كاش</li>
+                                    <li><strong>مدة التوصيل:</strong> ٢٤ ساعة عمل كحد أقصى</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     
                     <div style="padding: 20px; border-top: 1px solid var(--light-gray);">
@@ -486,6 +600,10 @@
                                 <i class="fas fa-clock" style="color: var(--primary);"></i>
                                 <span>من الساعة 9 صباحاً حتى 5 مساءً (بتوقيت القاهرة)</span>
                             </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
+                                <span>القاهرة، مصر</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -496,7 +614,7 @@
             </div>
         </div>
     </div>
-
+    <!-- عندما يتم أخذ بيانات من السيرفر -->
     <!-- نافذة عرض طلبات الممرض -->
     <div class="modal" id="nurseOrdersModal">
         <div class="modal-content">
@@ -529,7 +647,6 @@
             </div>
         </div>
     </div>
-
     <!-- نافذة تفاصيل المريض -->
     <div class="modal details-modal" id="patientDetailsModal">
         <div class="modal-content">
@@ -580,7 +697,6 @@
             </div>
         </div>
     </div>
-
     <!-- نافذة تفاصيل الممرض -->
     <div class="modal details-modal" id="nurseDetailsModal">
         <div class="modal-content">

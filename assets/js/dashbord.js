@@ -1,11 +1,8 @@
-// ملف main.js
-
 class DashboardUI {
     constructor() {
         this.currentSection = 'overview';
         this.init();
     }
-
     init() {
         this.setupNavigation();
         this.setupNotifications();
@@ -15,7 +12,6 @@ class DashboardUI {
         this.setupSearch();
         this.setupOrderFilter();
     }
-
     // =============== التنقل بين الأقسام ===============
     setupNavigation() {
         const navLinks = document.querySelectorAll('.nav-link[data-section]');
@@ -24,16 +20,13 @@ class DashboardUI {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const sectionId = link.dataset.section;
-                
                 // تحديث الشكل
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
-                
                 // إخفاء جميع الأقسام وإظهار المطلوب
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
-                
                 const targetSection = document.getElementById(sectionId);
                 if (targetSection) {
                     targetSection.classList.add('active');
@@ -44,7 +37,6 @@ class DashboardUI {
                 }
             });
         });
-
         // معالجة زر تسجيل الخروج
         const logoutBtn = document.getElementById('logoutBtn');
         if (logoutBtn) {
@@ -55,7 +47,6 @@ class DashboardUI {
                 }
             });
         }
-
         // معالجة "عرض الكل" في الطلبات
         const viewAllOrders = document.getElementById('viewAllOrders');
         if (viewAllOrders) {
@@ -66,7 +57,6 @@ class DashboardUI {
             });
         }
     }
-
     updatePageTitle(sectionId) {
         const titles = {
             'overview': { main: 'نظرة عامة', sub: 'مرحباً أحمد، هذه نظرة عامة على النظام' },
@@ -77,7 +67,7 @@ class DashboardUI {
             'settings': { main: 'الإعدادات', sub: 'تخصيص إعدادات النظام' },
             'help': { main: 'المساعدة', sub: 'أسئلة شائعة وتواصل مع الدعم' }
         };
-
+            // لتغيير النص في الصفحة
         const titleEl = document.getElementById('pageTitle');
         const subtitleEl = document.getElementById('pageSubtitle');
         
@@ -86,7 +76,6 @@ class DashboardUI {
             subtitleEl.textContent = titles[sectionId].sub;
         }
     }
-
     // =============== نظام الإشعارات ===============
     setupNotifications() {
         const notificationBtn = document.getElementById('notificationBtn');
@@ -99,14 +88,12 @@ class DashboardUI {
                 notificationDropdown.classList.toggle('show');
             });
         }
-
         // إغلاق الإشعارات عند الضغط خارجها
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.notification-container')) {
                 notificationDropdown?.classList.remove('show');
             }
         });
-
         // تعيين الكل كمقروء
         if (markAllReadBtn) {
             markAllReadBtn.addEventListener('click', () => {
@@ -116,7 +103,6 @@ class DashboardUI {
                 this.updateNotificationBadge();
             });
         }
-
         // تحديث عداد الإشعارات عند الضغط على إشعار
         document.addEventListener('click', (e) => {
             const notificationItem = e.target.closest('.notification-item');
@@ -126,7 +112,6 @@ class DashboardUI {
             }
         });
     }
-
     updateNotificationBadge() {
         const badge = document.getElementById('notificationCount');
         const unreadCount = document.querySelectorAll('.notification-item.unread').length;
@@ -136,7 +121,6 @@ class DashboardUI {
             badge.style.display = unreadCount > 0 ? 'flex' : 'none';
         }
     }
-
     // =============== إدارة النوافذ المنبثقة ===============
     setupModals() {
         // إغلاق النوافذ
@@ -149,7 +133,6 @@ class DashboardUI {
                 }
             });
         });
-
         // إغلاق عند الضغط خارج المحتوى
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('click', (e) => {
@@ -158,7 +141,6 @@ class DashboardUI {
                 }
             });
         });
-
         // إغلاق بالضغط على ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -168,22 +150,17 @@ class DashboardUI {
             }
         });
     }
-
     // فتح نافذة طلبات الممرض
     showNurseOrders(nurseName, nurseAvatar) {
         const modal = document.getElementById('nurseOrdersModal');
         if (!modal) return;
-
         // تحديث البيانات
         const avatarEl = document.getElementById('modalNurseAvatar');
         const nameEl = document.getElementById('modalNurseName');
-        
         if (avatarEl) avatarEl.textContent = nurseAvatar || 'م';
         if (nameEl) nameEl.textContent = nurseName || 'الممرض';
-        
         modal.style.display = 'flex';
     }
-
     // فتح نافذة تفاصيل المريض
     showPatientDetails(patientId) {
         const modal = document.getElementById('patientDetailsModal');
@@ -191,7 +168,6 @@ class DashboardUI {
             modal.style.display = 'flex';
         }
     }
-
     // فتح نافذة تفاصيل الممرض
     showNurseDetails(nurseId) {
         const modal = document.getElementById('nurseDetailsModal');
@@ -199,11 +175,9 @@ class DashboardUI {
             modal.style.display = 'flex';
         }
     }
-
     // =============== الأسئلة الشائعة ===============
     setupFaqAccordion() {
-        const faqContainer = document.getElementById('faqContainer');
-        
+        const faqContainer = document.getElementById('faqContainer');   
         if (faqContainer) {
             faqContainer.addEventListener('click', (e) => {
                 const question = e.target.closest('.faq-question');
@@ -231,44 +205,6 @@ class DashboardUI {
             });
         }
     }
-
-    initializeFaqs() {
-        // هتتملي من الباك إند، دي بس لوحة افتراضية
-        const faqContainer = document.getElementById('faqContainer');
-        if (faqContainer && faqContainer.children.length === 0) {
-            const sampleFaq = `
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>كيف يمكنني إضافة ممرض جديد؟</span>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        يمكنك إضافة ممرض جديد من خلال قسم الممرضين ثم الضغط على زر "إضافة ممرض" وتعبئة البيانات المطلوبة.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>كيف يتم حساب إيرادات الممرضين؟</span>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        يتم حساب إيرادات الممرضين بناءً على الطلبات المكتملة مطروحاً منها نسبة المنصة المتفق عليها.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>ماذا أفعل إذا كان هناك طلب ملغي؟</span>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        في حالة إلغاء الطلب، يمكنك التواصل مع المريض والممرض لمعرفة سبب الإلغاء وتقديم الدعم المناسب.
-                    </div>
-                </div>
-            `;
-            faqContainer.innerHTML = sampleFaq;
-        }
-    }
-
     // =============== النماذج ===============
     setupForms() {
         // نموذج الإعدادات
@@ -279,7 +215,6 @@ class DashboardUI {
                 alert('تم حفظ الإعدادات بنجاح');
             });
         }
-
         // أزرار الإضافة
         const addPatientBtn = document.getElementById('addPatientBtn');
         if (addPatientBtn) {
@@ -287,7 +222,6 @@ class DashboardUI {
                 alert('سيتم توجيهك لصفحة إضافة مريض جديد');
             });
         }
-
         const addNurseBtn = document.getElementById('addNurseBtn');
         if (addNurseBtn) {
             addNurseBtn.addEventListener('click', () => {
@@ -295,11 +229,9 @@ class DashboardUI {
             });
         }
     }
-
     // =============== البحث ===============
     setupSearch() {
-        const searchInput = document.getElementById('globalSearch');
-        
+        const searchInput = document.getElementById('globalSearch');   
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
@@ -315,11 +247,9 @@ class DashboardUI {
             });
         }
     }
-
     filterTable(table, searchTerm) {
         const rows = table.querySelectorAll('tbody tr');
         let hasVisibleRows = false;
-        
         rows.forEach(row => {
             let textContent = '';
             row.querySelectorAll('td').forEach(cell => {
@@ -333,11 +263,9 @@ class DashboardUI {
                 row.style.display = 'none';
             }
         });
-        
         // إظهار رسالة إذا لم توجد نتائج
         const tbody = table.querySelector('tbody');
         let noResultsRow = tbody.querySelector('.no-results-row');
-        
         if (!hasVisibleRows && searchTerm !== '') {
             if (!noResultsRow) {
                 noResultsRow = document.createElement('tr');
@@ -352,7 +280,6 @@ class DashboardUI {
             noResultsRow.remove();
         }
     }
-
     // =============== فلتر الطلبات ===============
     setupOrderFilter() {
         const filterSelect = document.getElementById('orderFilter');
@@ -360,10 +287,8 @@ class DashboardUI {
             filterSelect.addEventListener('change', (e) => {
                 const filterValue = e.target.value;
                 const table = document.querySelector('#orders .data-table');
-                
                 if (table) {
                     const rows = table.querySelectorAll('tbody tr');
-                    
                     rows.forEach(row => {
                         const statusCell = row.querySelector('td:nth-child(8)'); // عمود الحالة
                         if (statusCell) {
@@ -394,38 +319,31 @@ class DashboardUI {
         }
     }
 }
-
 // =============== دوال عامة للاستخدام من HTML ===============
 function showNurseOrders(nurseName, nurseAvatar) {
     if (window.dashboard) {
         window.dashboard.showNurseOrders(nurseName, nurseAvatar);
     }
 }
-
 function showPatientDetails(patientId) {
     if (window.dashboard) {
         window.dashboard.showPatientDetails(patientId);
     }
 }
-
 function showNurseDetails(nurseId) {
     if (window.dashboard) {
         window.dashboard.showNurseDetails(nurseId);
     }
 }
-
 function editPatientFromModal() {
     alert('فتح نافذة تعديل بيانات المريض');
 }
-
 function viewPatientOrders() {
     alert('عرض طلبات المريض');
 }
-
 function editNurseFromModal() {
     alert('فتح نافذة تعديل بيانات الممرض');
 }
-
 function showNurseOrdersFromModal() {
     const modal = document.getElementById('nurseDetailsModal');
     if (modal) {
@@ -435,7 +353,6 @@ function showNurseOrdersFromModal() {
         }, 300);
     }
 }
-
 // =============== تشغيل الكود بعد تحميل الصفحة ===============
 document.addEventListener('DOMContentLoaded', () => {
     window.dashboard = new DashboardUI();
