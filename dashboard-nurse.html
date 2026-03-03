@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الممرض - Safe Hands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/dashboard-nurse.css">
+    <link rel="icon" href="assets/images/icon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="homepage.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <div class="logo-text">Safe Hands</div>
+                </a>
+                
+                <div class="header-actions">
+                    <a href="nurse-dashboard.html" class="btn btn-primary">
+                        <i class="fas fa-tachometer-alt"></i>
+                        لوحة التحكم
+                    </a>
+                    <div style="position: relative;">
+                        <a href="nurse-notifications.html" class="btn btn-outline">
+                            <i class="fas fa-bell"></i>
+                            الإشعارات
+                        </a>
+                        <span style="position: absolute; top: -5px; left: -5px; background: var(--danger); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700;">5</span>
+                    </div>
+                    <button class="btn btn-success" onclick="startShift()">
+                        <i class="fas fa-play-circle"></i>
+                        بدء الدوام
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-user-nurse"></i>
+                لوحة تحكم الممرض
+            </h1>
+            <p class="page-subtitle">مرحباً بك! إليك جدول مواعيدك اليومي ومهامك</p>
+        </div>
+
+        <!-- Nurse Profile Summary -->
+        <div class="nurse-profile-summary">
+            <div class="nurse-avatar-large">س</div>
+            <div class="nurse-info">
+                <div class="nurse-name">سارة محمود</div>
+                <div class="nurse-meta">
+                    <div class="nurse-meta-item">
+                        <i class="fas fa-briefcase"></i>
+                        6 سنوات خبرة
+                    </div>
+                    <div class="nurse-meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        القاهرة - مدينة نصر
+                    </div>
+                    <div class="nurse-meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        دوام كامل
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div class="nurse-rating-badge">
+                        <i class="fas fa-star"></i>
+                        4.8/5 (127 تقييم)
+                    </div>
+                    <div class="status-badge badge-online">
+                        <i class="fas fa-circle"></i>
+                        متصل الآن
+                    </div>
+                </div>
+                <div class="nurse-actions">
+                    <button class="btn-white" onclick="updateAvailability()">
+                        <i class="fas fa-user-clock"></i>
+                        تحديث حالة التوفر
+                    </button>
+                    <button class="btn-white" onclick="viewSchedule()">
+                        <i class="fas fa-calendar-week"></i>
+                        الجدول الأسبوعي
+                    </button>
+                    <button class="btn-white" onclick="viewEarnings()">
+                        <i class="fas fa-chart-line"></i>
+                        تقرير الأرباح
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        15% هذا الأسبوع
+                    </div>
+                </div>
+                <div class="stat-value">8</div>
+                <div class="stat-label">مرضى اليوم</div>
+            </div>
+            
+            <div class="stat-card primary">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        5% هذا الأسبوع
+                    </div>
+                </div>
+                <div class="stat-value">3.2</div>
+                <div class="stat-label">متوسط وقت الزيارة (ساعات)</div>
+            </div>
+            
+            <div class="stat-card warning">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        8% هذا الأسبوع
+                    </div>
+                </div>
+                <div class="stat-value">4.9</div>
+                <div class="stat-label">تقييم هذا الأسبوع</div>
+            </div>
+            
+            <div class="stat-card accent">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        22% هذا الأسبوع
+                    </div>
+                </div>
+                <div class="stat-value">1,850</div>
+                <div class="stat-label">أرباح اليوم (ج.م)</div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Today's Schedule -->
+                <div class="todays-schedule">
+                    <div class="section-header">
+                        <h3 class="section-title">
+                            <i class="fas fa-calendar-day"></i>
+                            جدول اليوم - السبت ١٥ مارس
+                        </h3>
+                        <a href="nurse-schedule.html" class="btn btn-outline btn-sm">
+                            <i class="fas fa-calendar-alt"></i>
+                            الجدول الأسبوعي
+                        </a>
+                    </div>
+                    <div class="section-body">
+                        <div class="appointments-list">
+                            <!-- Appointment 1 -->
+                            <div class="appointment-item">
+                                <div class="appointment-time">10:00 ص</div>
+                                <div class="appointment-details">
+                                    <div class="patient-name">أحمد محمود</div>
+                                    <div class="patient-service">حقنة عضلية + قياس ضغط</div>
+                                    <div class="patient-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        مدينة نصر، برج النور - 15 دقيقة
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn btn-success btn-sm" onclick="updateStatus('SH20250315001', 'arrived')">
+                                            <i class="fas fa-check"></i>
+                                            وصلت
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="callPatient('01001234567')">
+                                            <i class="fas fa-phone"></i>
+                                            اتصال
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="navigateTo('patient1')">
+                                            <i class="fas fa-directions"></i>
+                                            اتجاهات
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="appointment-status status-urgent">
+                                    <i class="fas fa-bolt"></i>
+                                    عاجل
+                                </div>
+                            </div>
+                            
+                            <!-- Appointment 2 -->
+                            <div class="appointment-item">
+                                <div class="appointment-time">11:30 ص</div>
+                                <div class="appointment-details">
+                                    <div class="patient-name">فاطمة علي (70 سنة)</div>
+                                    <div class="patient-service">قياس ضغط + تخطيط قلب</div>
+                                    <div class="patient-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        مصر الجديدة - 25 دقيقة
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn btn-primary btn-sm" onclick="updateStatus('SH20250315002', 'on-way')">
+                                            <i class="fas fa-truck"></i>
+                                            في الطريق
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="viewPatientInfo('fatima')">
+                                            <i class="fas fa-info-circle"></i>
+                                            تفاصيل
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="appointment-status status-upcoming">
+                                    <i class="fas fa-clock"></i>
+                                    قادم
+                                </div>
+                            </div>
+                            
+                            <!-- Appointment 3 -->
+                            <div class="appointment-item">
+                                <div class="appointment-time">2:00 م</div>
+                                <div class="appointment-details">
+                                    <div class="patient-name">محمد أحمد عبدالله</div>
+                                    <div class="patient-service">إعطاء حقنة + قياس ضغط</div>
+                                    <div class="patient-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        مدينة نصر، شارع النحاس - في الموقع
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn btn-success btn-sm" onclick="completeService('SH20250315001')">
+                                            <i class="fas fa-check-circle"></i>
+                                            انتهيت
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="addNotes('SH20250315001')">
+                                            <i class="fas fa-edit"></i>
+                                            ملاحظات
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="appointment-status status-arrived">
+                                    <i class="fas fa-home"></i>
+                                    في الموقع
+                                </div>
+                            </div>
+                            
+                            <!-- Appointment 4 -->
+                            <div class="appointment-item">
+                                <div class="appointment-time">4:00 م</div>
+                                <div class="appointment-details">
+                                    <div class="patient-name">خالد عمر (مريض سكري)</div>
+                                    <div class="patient-service">تعبئة أدوية أسبوعية</div>
+                                    <div class="patient-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        العباسية - 35 دقيقة
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn btn-outline btn-sm" onclick="remindMe('SH20250315004')">
+                                            <i class="fas fa-bell"></i>
+                                            تذكير
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="checkSupplies()">
+                                            <i class="fas fa-briefcase-medical"></i>
+                                            المستلزمات
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="appointment-status status-upcoming">
+                                    <i class="fas fa-clock"></i>
+                                    قادم
+                                </div>
+                            </div>
+                            
+                            <!-- Appointment 5 -->
+                            <div class="appointment-item">
+                                <div class="appointment-time">10:00 ص</div>
+                                <div class="appointment-details">
+                                    <div class="patient-name">سامي رجب</div>
+                                    <div class="patient-service">تغيير جروح</div>
+                                    <div class="patient-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        حدائق القبة - مكتمل
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn btn-outline btn-sm" onclick="addReport('SH20250314005')">
+                                            <i class="fas fa-file-medical"></i>
+                                            تقرير
+                                        </button>
+                                        <button class="btn btn-outline btn-sm" onclick="requestReview('SH20250314005')">
+                                            <i class="fas fa-star"></i>
+                                            طلب تقييم
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="appointment-status status-completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    مكتمل
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-map-marked-alt"></i>
+                        خريطة الزيارات اليوم
+                    </h3>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>خريطة تفاعلية لمواقع المرضى</p>
+                        <p style="font-size: 14px; margin-top: 10px;">ستظهر مواقع الزيارات وأفضل المسارات</p>
+                    </div>
+                    <div class="route-info">
+                        <div>
+                            <i class="fas fa-road" style="color: var(--primary);"></i>
+                            <span style="font-weight: 600;">المسافة الكلية:</span> 24 كم
+                        </div>
+                        <div>
+                            <i class="fas fa-clock" style="color: var(--warning);"></i>
+                            <span style="font-weight: 600;">الوقت المتوقع:</span> 3 ساعات 20 دقيقة
+                        </div>
+                        <div>
+                            <i class="fas fa-gas-pump" style="color: var(--success);"></i>
+                            <span style="font-weight: 600;">تكلفة الوقود:</span> ≈ 45 ج.م
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Earnings Summary -->
+                <div class="earnings-summary">
+                    <h3 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        أرباح هذا الأسبوع
+                    </h3>
+                    <div class="earnings-stats">
+                        <div class="earning-item">
+                            <div class="earning-value">1,850 ج.م</div>
+                            <div class="earning-label">اليوم</div>
+                        </div>
+                        <div class="earning-item">
+                            <div class="earning-value">8,250 ج.م</div>
+                            <div class="earning-label">هذا الأسبوع</div>
+                        </div>
+                        <div class="earning-item">
+                            <div class="earning-value">32,400 ج.م</div>
+                            <div class="earning-label">هذا الشهر</div>
+                        </div>
+                    </div>
+                    
+                    <div class="earnings-chart" id="earningsChart">
+                        <!-- Chart bars will be added by JavaScript -->
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn btn-outline" onclick="viewDetailedEarnings()">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            تفاصيل الأرباح
+                        </button>
+                        <button class="btn btn-primary" onclick="requestPayout()" style="margin-right: 10px;">
+                            <i class="fas fa-money-check-alt"></i>
+                            طلب سحب
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3 class="section-title">
+                        <i class="fas fa-bolt"></i>
+                        إجراءات سريعة
+                    </h3>
+                    <div class="actions-grid">
+                        <div class="action-btn" onclick="markAsAvailable()">
+                            <div class="action-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="action-title">متاح للحجوزات</div>
+                            <div class="action-desc">فتح جدول المواعيد</div>
+                        </div>
+                        
+                        <div class="action-btn" onclick="addMedicalReport()">
+                            <div class="action-icon">
+                                <i class="fas fa-file-medical-alt"></i>
+                            </div>
+                            <div class="action-title">إضافة تقرير</div>
+                            <div class="action-desc">تقرير طبي للمريض</div>
+                        </div>
+                        
+                        <div class="action-btn" onclick="checkInventory()">
+                            <div class="action-icon">
+                                <i class="fas fa-briefcase-medical"></i>
+                            </div>
+                            <div class="action-title">فحص المستلزمات</div>
+                            <div class="action-desc">المعدات والأدوية</div>
+                        </div>
+                        
+                        <div class="action-btn" onclick="viewTraining()">
+                            <div class="action-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="action-title">تدريبات جديدة</div>
+                            <div class="action-desc">تطوير المهارات</div>
+                        </div>
+                        
+                        <div class="action-btn" onclick="contactSupport()">
+                            <div class="action-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="action-title">الدعم الفني</div>
+                            <div class="action-desc">مساعدة 24/7</div>
+                        </div>
+                        
+                        <div class="action-btn" onclick="viewPerformance()">
+                            <div class="action-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="action-title">أدائي</div>
+                            <div class="action-desc">تقارير وتقييمات</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patients List -->
+                <div class="patients-list">
+                    <h3 class="section-title">
+                        <i class="fas fa-user-injured"></i>
+                        مرضى اليوم
+                    </h3>
+                    <div class="patients-grid">
+                        <div class="patient-card">
+                            <div class="patient-header">
+                                <div class="patient-avatar">أ</div>
+                                <div class="patient-info">
+                                    <div class="patient-name-small">أحمد محمود</div>
+                                    <div class="patient-condition">
+                                        <i class="fas fa-exclamation-triangle" style="color: var(--warning);"></i>
+                                        مريض سكري - حساسية بنسلين
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="patient-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">العمر:</span>
+                                    <span class="detail-value">45 سنة</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">الخدمة:</span>
+                                    <span class="detail-value">حقنة + ضغط</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">الحالة:</span>
+                                    <span class="detail-value" style="color: var(--warning); font-weight: 600;">عاجل</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-card">
+                            <div class="patient-header">
+                                <div class="patient-avatar">ف</div>
+                                <div class="patient-info">
+                                    <div class="patient-name-small">فاطمة علي</div>
+                                    <div class="patient-condition">
+                                        <i class="fas fa-heart" style="color: var(--danger);"></i>
+                                        ضغط مرتفع - قلب
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="patient-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">العمر:</span>
+                                    <span class="detail-value">70 سنة</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">الخدمة:</span>
+                                    <span class="detail-value">تخطيط قلب</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">الانتظام:</span>
+                                    <span class="detail-value" style="color: var(--success); font-weight: 600;">أسبوعي</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shift Information -->
+                <div class="quick-actions" style="margin-top: 20px;">
+                    <h3 class="section-title">
+                        <i class="fas fa-user-clock"></i>
+                        معلومات الدوام
+                    </h3>
+                    <div style="padding: 15px; background: var(--light-gray); border-radius: var(--radius); margin-top: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <div style="font-weight: 600; color: var(--dark);">بداية الدوام:</div>
+                            <div style="color: var(--success); font-weight: 600;">8:00 ص</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <div style="font-weight: 600; color: var(--dark);">مدة العمل:</div>
+                            <div style="color: var(--dark);">8 ساعات</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                            <div style="font-weight: 600; color: var(--dark);">الزيارات المتبقية:</div>
+                            <div style="color: var(--primary); font-weight: 600;">3 زيارات</div>
+                        </div>
+                        <button class="btn btn-warning" style="width: 100%;" onclick="endShift()">
+                            <i class="fas fa-stop-circle"></i>
+                            إنهاء الدوام
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Safe Hands</h3>
+                    <p style="color: #B0B8D0; line-height: 1.6; margin-bottom: 20px;">منصة رائدة للتمريض المنزلي تهدف إلى ربط المرضى المحتاجين للرعاية الصحية مع الممرضين المؤهلين والمعتمدين.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة للممرضين</h3>
+                    <ul class="footer-links">
+                        <li><a href="nurse-dashboard.html"><i class="fas fa-chevron-left"></i> لوحة التحكم</a></li>
+                        <li><a href="nurse-schedule.html"><i class="fas fa-chevron-left"></i> الجدول الأسبوعي</a></li>
+                        <li><a href="nurse-earnings.html"><i class="fas fa-chevron-left"></i> الأرباح</a></li>
+                        <li><a href="nurse-patients.html"><i class="fas fa-chevron-left"></i> المرضى</a></li>
+                        <li><a href="nurse-training.html"><i class="fas fa-chevron-left"></i> التدريبات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>الدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة للممرضين</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة المدفوعات</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> دعم الممرضين 24/7</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Safe Hands. جميع الحقوق محفوظة. | لوحة تحكم الممرض - تحديث البيانات كل 5 دقائق
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/dashboard-nurse.js"></script>
+</body>
+</html>

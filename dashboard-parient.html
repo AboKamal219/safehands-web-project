@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Safe Hands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/dashboard-parient.css">
+    <link rel="icon" href="assets/images/icon.png">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="homepage.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <div class="logo-text">Safe Hands</div>
+                </a>
+                
+                <div class="header-actions">
+                    <a href="dashboard.html" class="btn btn-primary">
+                        <i class="fas fa-tachometer-alt"></i>
+                        لوحة التحكم
+                    </a>
+                    <div class="notifications-badge">
+                        <a href="notifications.html" class="btn btn-outline">
+                            <i class="fas fa-bell"></i>
+                            الإشعارات
+                        </a>
+                        <span class="badge">3</span>
+                    </div>
+                    <a href="homepage.html#booking" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i>
+                        حجز جديد
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-tachometer-alt"></i>
+                لوحة التحكم
+            </h1>
+            <p class="page-subtitle">مرحباً بعودتك! إليك ملخص نشاطاتك والخدمات القادمة</p>
+        </div>
+
+        <!-- User Profile Summary -->
+        <div class="user-profile-summary">
+            <div class="user-avatar">م</div>
+            <div class="user-info">
+                <div class="user-name">محمد أحمد عبدالله</div>
+                <div class="user-meta">
+                    <div class="user-meta-item">
+                        <i class="fas fa-phone"></i>
+                        +20 100 123 4567
+                    </div>
+                    <div class="user-meta-item">
+                        <i class="fas fa-envelope"></i>
+                        mohamed@example.com
+                    </div>
+                    <div class="user-meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        عضو منذ مارس 2024
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-white" onclick="editProfile()">
+                        <i class="fas fa-user-edit"></i>
+                        تعديل الملف الشخصي
+                    </button>
+                    <button class="btn-white" onclick="viewMedicalHistory()">
+                        <i class="fas fa-file-medical"></i>
+                        السجل الطبي
+                    </button>
+                    <button class="btn-white" onclick="viewPreferences()">
+                        <i class="fas fa-cog"></i>
+                        الإعدادات
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        12% هذا الشهر
+                    </div>
+                </div>
+                <div class="stat-value">8</div>
+                <div class="stat-label">حجز نشط</div>
+            </div>
+            
+            <div class="stat-card success">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        8% هذا الشهر
+                    </div>
+                </div>
+                <div class="stat-value">24</div>
+                <div class="stat-label">حجز مكتمل</div>
+            </div>
+            
+            <div class="stat-card warning">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        3% هذا الشهر
+                    </div>
+                </div>
+                <div class="stat-value">2</div>
+                <div class="stat-label">في الانتظار</div>
+            </div>
+            
+            <div class="stat-card accent">
+                <div class="stat-header">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        15% هذا الشهر
+                    </div>
+                </div>
+                <div class="stat-value">4.8</div>
+                <div class="stat-label">متوسط التقييمات</div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Recent Bookings -->
+                <div class="recent-bookings">
+                    <div class="section-header">
+                        <h3 class="section-title">
+                            <i class="fas fa-history"></i>
+                            الحجوزات الأخيرة
+                        </h3>
+                        <a href="booking-history.html" class="btn btn-outline btn-sm">
+                            <i class="fas fa-list"></i>
+                            عرض الكل
+                        </a>
+                    </div>
+                    <div class="section-body">
+                        <table class="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الحجز</th>
+                                    <th>الخدمة</th>
+                                    <th>الوقت</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="booking-id">#SH20250315001</div>
+                                        <div class="booking-nurse">سارة محمود</div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-service">إعطاء حقنة + قياس ضغط</div>
+                                        <div class="booking-time">15 مارس - 2:00 م</div>
+                                    </td>
+                                    <td>اليوم - 2:00 م</td>
+                                    <td>
+                                        <span class="booking-status status-in-progress">
+                                            <i class="fas fa-truck"></i>
+                                            في الطريق
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="booking-actions">
+                                            <button class="btn-icon" title="عرض التفاصيل" onclick="viewBooking('SH20250315001')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="التواصل مع الممرض" onclick="messageNurse('SH20250315001')">
+                                                <i class="fas fa-comment-alt"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="booking-id">#SH20250314002</div>
+                                        <div class="booking-nurse">محمد حسن</div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-service">تغيير جروح</div>
+                                        <div class="booking-time">14 مارس - 11:00 ص</div>
+                                    </td>
+                                    <td>أمس - 11:00 ص</td>
+                                    <td>
+                                        <span class="booking-status status-completed">
+                                            <i class="fas fa-check-circle"></i>
+                                            مكتمل
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="booking-actions">
+                                            <button class="btn-icon" title="عرض التفاصيل" onclick="viewBooking('SH20250314002')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="إضافة تقييم" onclick="addReview('SH20250314002')">
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="booking-id">#SH20250313003</div>
+                                        <div class="booking-nurse">هدى كمال</div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-service">إدارة أدوية أسبوعية</div>
+                                        <div class="booking-time">13 مارس - 10:00 ص</div>
+                                    </td>
+                                    <td>13 مارس - 10:00 ص</td>
+                                    <td>
+                                        <span class="booking-status status-completed">
+                                            <i class="fas fa-check-circle"></i>
+                                            مكتمل
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="booking-actions">
+                                            <button class="btn-icon" title="عرض التفاصيل" onclick="viewBooking('SH20250313003')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="حجز مرة أخرى" onclick="rebookService('SH20250313003')">
+                                                <i class="fas fa-redo"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="booking-id">#SH20250312004</div>
+                                        <div class="booking-nurse">علي محمد</div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-service">قياس ضغط + سكر</div>
+                                        <div class="booking-time">12 مارس - 3:00 م</div>
+                                    </td>
+                                    <td>12 مارس - 3:00 م</td>
+                                    <td>
+                                        <span class="booking-status status-cancelled">
+                                            <i class="fas fa-times-circle"></i>
+                                            ملغي
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="booking-actions">
+                                            <button class="btn-icon" title="عرض التفاصيل" onclick="viewBooking('SH20250312004')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="حجز جديد" onclick="newBooking()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="booking-id">#SH20250310005</div>
+                                        <div class="booking-nurse">نورا أحمد</div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-service">استشارة تغذوية</div>
+                                        <div class="booking-time">10 مارس - 1:00 م</div>
+                                    </td>
+                                    <td>10 مارس - 1:00 م</td>
+                                    <td>
+                                        <span class="booking-status status-completed">
+                                            <i class="fas fa-check-circle"></i>
+                                            مكتمل
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="booking-actions">
+                                            <button class="btn-icon" title="عرض التفاصيل" onclick="viewBooking('SH20250310005')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="تحميل التقرير" onclick="downloadReport('SH20250310005')">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3 class="section-title">
+                        <i class="fas fa-bolt"></i>
+                        إجراءات سريعة
+                    </h3>
+                    <div class="actions-grid">
+                        <a href="homepage.html#booking" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="action-title">حجز جديد</div>
+                            <div class="action-desc">خدمة طبية منزلية</div>
+                        </a>
+                        
+                        <a href="smart-suggestions.html" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="action-title">اقتراحات ذكية</div>
+                            <div class="action-desc">مبنية على صحتك</div>
+                        </a>
+                        
+                        <a href="ratings-reviews.html" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="action-title">تقييم الخدمات</div>
+                            <div class="action-desc">شارك تجربتك</div>
+                        </a>
+                        
+                        <a href="medical-history.html" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <div class="action-title">السجل الطبي</div>
+                            <div class="action-desc">تاريخك الصحي</div>
+                        </a>
+                        
+                        <a href="support.html" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="action-title">الدعم الفني</div>
+                            <div class="action-desc">مساعدة 24/7</div>
+                        </a>
+                        
+                        <a href="family-members.html" class="action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="action-title">أفراد العائلة</div>
+                            <div class="action-desc">إدارة حساباتهم</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Upcoming Bookings -->
+                <div class="upcoming-bookings">
+                    <h3 class="section-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        الحجوزات القادمة
+                    </h3>
+                    <div class="upcoming-list">
+                        <div class="upcoming-item">
+                            <div class="upcoming-icon">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <div class="upcoming-details">
+                                <div class="upcoming-service">إعطاء حقنة</div>
+                                <div class="upcoming-time">
+                                    <i class="fas fa-clock"></i>
+                                    اليوم - 2:00 مساءً
+                                </div>
+                                <div class="upcoming-nurse">الممرضة سارة محمود</div>
+                            </div>
+                            <button class="btn-icon" onclick="viewBooking('SH20250315001')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="upcoming-item">
+                            <div class="upcoming-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="upcoming-details">
+                                <div class="upcoming-service">قياس ضغط أسبوعي</div>
+                                <div class="upcoming-time">
+                                    <i class="fas fa-clock"></i>
+                                    18 مارس - 10:00 صباحاً
+                                </div>
+                                <div class="upcoming-nurse">الممرض محمد حسن</div>
+                            </div>
+                            <button class="btn-icon" onclick="editBooking('SH20250318006')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="upcoming-item">
+                            <div class="upcoming-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="upcoming-details">
+                                <div class="upcoming-service">تعبئة الأدوية</div>
+                                <div class="upcoming-time">
+                                    <i class="fas fa-clock"></i>
+                                    22 مارس - 11:00 صباحاً
+                                </div>
+                                <div class="upcoming-nurse">الممرضة هدى كمال</div>
+                            </div>
+                            <button class="btn-icon" onclick="remindBooking('SH20250322007')">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorite Nurses -->
+                <div class="favorite-nurses">
+                    <h3 class="section-title">
+                        <i class="fas fa-heart"></i>
+                        الممرضون المفضلون
+                    </h3>
+                    <div class="nurses-list">
+                        <div class="nurse-item" onclick="viewNurseProfile('sara')">
+                            <div class="nurse-avatar">س</div>
+                            <div class="nurse-details">
+                                <div class="nurse-name">سارة محمود</div>
+                                <div class="nurse-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span style="font-size: 11px; color: var(--gray); margin-right: 5px;">4.8</span>
+                                </div>
+                                <div class="nurse-specialty">حقن، رعاية مسنين</div>
+                            </div>
+                            <button class="btn-icon" onclick="bookWithNurse('sara')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="nurse-item" onclick="viewNurseProfile('mohamed')">
+                            <div class="nurse-avatar">م</div>
+                            <div class="nurse-details">
+                                <div class="nurse-name">محمد حسن</div>
+                                <div class="nurse-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span style="font-size: 11px; color: var(--gray); margin-right: 5px;">5.0</span>
+                                </div>
+                                <div class="nurse-specialty">قياس ضغط، تخطيط قلب</div>
+                            </div>
+                            <button class="btn-icon" onclick="bookWithNurse('mohamed')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="nurse-item" onclick="viewNurseProfile('huda')">
+                            <div class="nurse-avatar">ه</div>
+                            <div class="nurse-details">
+                                <div class="nurse-name">هدى كمال</div>
+                                <div class="nurse-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span style="font-size: 11px; color: var(--gray); margin-right: 5px;">4.9</span>
+                                </div>
+                                <div class="nurse-specialty">إدارة أدوية، تغذية</div>
+                            </div>
+                            <button class="btn-icon" onclick="bookWithNurse('huda')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Tips -->
+                <div class="quick-actions" style="margin-top: 20px;">
+                    <h3 class="section-title">
+                        <i class="fas fa-lightbulb"></i>
+                        نصائح صحية اليوم
+                    </h3>
+                    <div style="padding: 15px; background: var(--light-gray); border-radius: var(--radius); margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <div style="width: 40px; height: 40px; background: var(--success); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: var(--dark);">لمرضى السكري</div>
+                                <div style="font-size: 12px; color: var(--gray);">اشرب 8 أكواب ماء يومياً</div>
+                            </div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--dark);">
+                            شرب الماء بانتظام يساعد في تنظيم سكر الدم ويمنع الجفاف الذي يؤثر على قراءات السكر.
+                        </div>
+                        <button class="btn btn-outline btn-sm" style="width: 100%; margin-top: 15px;" onclick="viewHealthTips()">
+                            <i class="fas fa-book-medical"></i>
+                            المزيد من النصائح
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Safe Hands</h3>
+                    <p style="color: #B0B8D0; line-height: 1.6; margin-bottom: 20px;">منصة رائدة للتمريض المنزلي تهدف إلى ربط المرضى المحتاجين للرعاية الصحية مع الممرضين المؤهلين والمعتمدين.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="homepage.html"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                        <li><a href="homepage.html#services"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+                        <li><a href="homepage.html#booking"><i class="fas fa-chevron-left"></i> حجز جديد</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-left"></i> لوحة التحكم</a></li>
+                        <li><a href="smart-suggestions.html"><i class="fas fa-chevron-left"></i> اقتراحات ذكية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>الدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الإلغاء</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Safe Hands. جميع الحقوق محفوظة. | آخر تحديث للبيانات: 15 مارس 2025 10:30 ص
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/dashboard-parient.js"></script>
+</body>
+</html>
