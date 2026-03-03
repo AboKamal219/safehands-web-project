@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة تحكم الممرض - Safe Hands</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/dashboard-nurse.css">
-    <link rel="icon" href="assets/images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dashboard-nurse.css">    
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">
+                <a href="homepage.html" class="logo">
                     <div class="logo-icon">
                         <i class="fas fa-hand-holding-medical"></i>
                     </div>
@@ -25,10 +23,29 @@
                 
                 <div class="header-actions">
                     <div style="position: relative;">
-                        <a href="nurse-notifications.html" class="btn btn-outline">
-                            <i class="fas fa-bell"></i>
-                            الإشعارات
-                        </a>
+                        <!-- زر الإشعارات -->
+                        <div class="notification-container">
+                            <button class="notification-btn" id="notificationBtn">
+                                <i class="far fa-bell"></i>
+                                <span class="notification-badge" id="notificationCount">1</span>
+                            </button>  
+                            <!-- نافذة الإشعارات -->
+                            <div class="notification-dropdown" id="notificationDropdown">
+                                <div class="notification-header">
+                                    <h3>الإشعارات</h3>
+                                    <button class="mark-all-read" id="markAllReadBtn">تعليم الكل كمقروء</button>
+                                </div>
+                                <div class="notification-list" id="notificationList">
+                                    <!-- سيتم تعبئة الإشعارات هنا -->
+                                </div>
+                                <div class="notification-footer">
+                                    <a href="#" class="view-all-notifications">
+                                        <span>عرض جميع الإشعارات</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <span style="position: absolute; top: -5px; left: -5px; background: var(--danger); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700;">5</span>
                     </div>
                     <button class="btn btn-success" onclick="startShift()">
@@ -314,33 +331,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Map Section -->
-                <div class="map-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-map-marked-alt"></i>
-                        خريطة الزيارات اليوم
-                    </h3>
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>خريطة تفاعلية لمواقع المرضى</p>
-                        <p style="font-size: 14px; margin-top: 10px;">ستظهر مواقع الزيارات وأفضل المسارات</p>
-                    </div>
-                    <div class="route-info">
-                        <div>
-                            <i class="fas fa-road" style="color: var(--primary);"></i>
-                            <span style="font-weight: 600;">المسافة الكلية:</span> 24 كم
-                        </div>
-                        <div>
-                            <i class="fas fa-clock" style="color: var(--warning);"></i>
-                            <span style="font-weight: 600;">الوقت المتوقع:</span> 3 ساعات 20 دقيقة
-                        </div>
-                        <div>
-                            <i class="fas fa-gas-pump" style="color: var(--success);"></i>
-                            <span style="font-weight: 600;">تكلفة الوقود:</span> ≈ 45 ج.م
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Right Column -->
@@ -531,49 +521,28 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Safe Hands</h3>
-                    <p style="color: #B0B8D0; line-height: 1.6; margin-bottom: 20px;">منصة رائدة للتمريض المنزلي تهدف إلى ربط المرضى المحتاجين للرعاية الصحية مع الممرضين المؤهلين والمعتمدين.</p>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>روابط سريعة للممرضين</h3>
-                    <ul class="footer-links">
-                        <li><a href="nurse-dashboard.html"><i class="fas fa-chevron-left"></i> لوحة التحكم</a></li>
-                        <li><a href="nurse-schedule.html"><i class="fas fa-chevron-left"></i> الجدول الأسبوعي</a></li>
-                        <li><a href="nurse-earnings.html"><i class="fas fa-chevron-left"></i> الأرباح</a></li>
-                        <li><a href="nurse-patients.html"><i class="fas fa-chevron-left"></i> المرضى</a></li>
-                        <li><a href="nurse-training.html"><i class="fas fa-chevron-left"></i> التدريبات</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>الدعم</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة للممرضين</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة المدفوعات</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> دعم الممرضين 24/7</a></li>
-                    </ul>
-                </div>
+    <!-- مودال واحد شامل للصفحة كلها -->
+    <div class="modal" id="universalModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">عنوان المودال</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            
-            <div class="copyright">
-                © 2026 Safe Hands. جميع الحقوق محفوظة. | لوحة تحكم الممرض - تحديث البيانات كل 5 دقائق
+            <div class="modal-body" id="modalBody">
+                <!-- المحتوى هيتغير هنا حسب الوظيفة -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <!-- الأزرار هتتغير هنا حسب الوظيفة -->
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Safe Hands. جميع الحقوق محفوظة. | آخر تحديث للبيانات: 15 مارس 2025 10:30 ص
+    </div>
     <script src="assets/js/dashboard-nurse.js"></script>
 </body>
 </html>
