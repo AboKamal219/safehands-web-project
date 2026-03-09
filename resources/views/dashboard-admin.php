@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Hands - لوحة التحكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashbord-admin.css">
+    <link rel="icon" href="../images/icon.png">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <a href="../../index.php" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hand-holding-medical"></i>
+                </div>
+                <div class="logo-text">Safe Hands</div>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <button class="nav-link active" data-section="overview">
+                        <i class="fas fa-home"></i>
+                        <span>نظرة عامة</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-section="patients">
+                        <i class="fas fa-users"></i>
+                        <span>المرضى</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-section="nurses">
+                        <i class="fas fa-user-nurse"></i>
+                        <span>الممرضون</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-section="orders">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>الطلبات</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-section="reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>التقارير</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>الإعدادات</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-divider"></div>
+            <div class="nav-menu">
+                <li class="nav-item">
+                    <button class="nav-link" data-section="help">
+                        <i class="fas fa-question-circle"></i>
+                        <span>المساعدة</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>تسجيل الخروج</span>
+                    </button>
+                </li>
+            </div>
+            <div class="user-profile">
+                <div class="profile-info">
+                    <div class="profile-avatar">أ</div>
+                    <div>
+                        <div class="profile-name">أحمد محمود</div>
+                        <div class="profile-role">مدير النظام</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- المحتوى الرئيسي -->
+        <div class="main-content">
+            <!-- الهيدر -->
+            <div class="header">
+                <div class="header-title">
+                    <h1 id="pageTitle">نظرة عامة</h1>
+                    <p id="pageSubtitle">مرحباً أحمد، هذه نظرة عامة على النظام</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="بحث في جميع البيانات..." id="globalSearch">
+                        <i class="fas fa-search"></i>
+                    </div>           
+                    <!-- زر الإشعارات -->
+                    <div class="notification-container">
+                        <button class="notification-btn" id="notificationBtn">
+                            <i class="far fa-bell"></i>
+                            <span class="notification-badge" id="notificationCount">1</span>
+                        </button>  
+                        <!-- نافذة الإشعارات -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h3>الإشعارات</h3>
+                                <button class="mark-all-read" id="markAllReadBtn">تعليم الكل كمقروء</button>
+                            </div>
+                            <div class="notification-list" id="notificationList">
+                                <!-- سيتم تعبئة الإشعارات هنا -->
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#" class="view-all-notifications">
+                                    <span>عرض جميع الإشعارات</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- المحتوى الديناميكي -->
+            <!-- قسم النظرة العامة -->
+            <div id="overview" class="content-section active">
+                <!-- بطاقات الإحصائيات -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon revenue">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>الإيرادات</h3>
+                            <div class="stat-value">34,200 ج</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12% عن الشهر الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon patients">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>المرضى الجدد</h3>
+                            <div class="stat-value">9</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5% عن الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon nurses">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>الممرضون المتاحون</h3>
+                            <div class="stat-value">18</div>
+                            <div class="stat-trend down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>2 عن الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orders">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>الطلبات اليوم</h3>
+                            <div class="stat-value">24</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8% عن الأمس</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جدول الطلبات -->
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">آخر الطلبات</h2>
+                        <a href="#" class="view-all" id="viewAllOrders">
+                            <span>عرض الكل</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>الحالة</th>
+                                <th>الخدمة</th>
+                                <th>رقم الطلب</th>
+                                <th>الممرض</th>
+                                <th>التاريخ</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <!-- سيتم تعبئته بالجافاسكريبت -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- قسم المرضى -->
+            <div id="patients" class="content-section">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">قائمة المرضى</h2>
+                        <div>
+                            <button class="action-btn" id="addPatientBtn">
+                                <i class="fas fa-user-plus"></i>
+                                إضافة مريض
+                            </button>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>العمر</th>
+                                <th>الجنس</th>
+                                <th>رقم الهاتف</th>
+                                <th>الحالة</th>
+                                <th>عدد الزيارات</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientsTable">
+                            <!-- سيتم تعبئته بالجافاسكريبت -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- قسم الممرضين -->
+            <div id="nurses" class="content-section">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">قائمة الممرضين</h2>
+                        <div>
+                            <button class="action-btn" id="addNurseBtn">
+                                <i class="fas fa-user-nurse"></i>
+                                إضافة ممرض
+                            </button>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>التخصص</th>
+                                <th>التقييم</th>
+                                <th>الحالة</th>
+                                <th>عدد الطلبات</th>
+                                <th>الإيرادات</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nursesTable">
+                            <!-- سيتم تعبئته بالجافاسكريبت -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- قسم الطلبات -->
+            <div id="orders" class="content-section">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">جميع الطلبات</h2>
+                        <div class="header-actions">
+                            <div class="select-group">
+                                <select id="orderFilter" class="form-control">
+                                    <option value="all">جميع الطلبات</option>
+                                    <option value="today">طلبات اليوم</option>
+                                    <option value="pending">قيد الانتظار</option>
+                                    <option value="completed">مكتملة</option>
+                                    <option value="cancelled">ملغية</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>المريض</th>
+                                <th>الخدمة</th>
+                                <th>الممرض</th>
+                                <th>التاريخ</th>
+                                <th>الوقت</th>
+                                <th>المبلغ</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allOrdersTable">
+                            <!-- سيتم تعبئته بالجافاسكريبت -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- قسم التقارير -->
+            <div id="reports" class="content-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon revenue">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>نمو الإيرادات</h3>
+                            <div class="stat-value">+24%</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>مقارنة بالشهر الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon patients">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>رضا العملاء</h3>
+                            <div class="stat-value">94%</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>من التقييمات الإيجابية</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon nurses">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>متوسط وقت الاستجابة</h3>
+                            <div class="stat-value">15 د</div>
+                            <div class="stat-trend down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-3 د عن الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orders">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>نسبة الإنجاز</h3>
+                            <div class="stat-value">98%</div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>من الطلبات المكتملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 20px;">مخطط الإيرادات الشهري</h3>
+                    <div class="chart-placeholder">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>مخطط بياني تفاعلي للإيرادات سيكون هنا</p>
+                        <small>عند ربط النظام بقاعدة بيانات حقيقية</small>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 20px;">توزيع الطلبات حسب الخدمة</h3>
+                    <div class="chart-placeholder">
+                        <i class="fas fa-chart-pie"></i>
+                        <p>مخطط دائري لتوزيع الخدمات سيكون هنا</p>
+                        <small>سيتم توليده تلقائياً من البيانات</small>
+                    </div>
+                </div>
+            </div>
+            <!-- قسم الإعدادات -->
+            <div id="settings" class="content-section">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">إعدادات النظام</h2>
+                    </div>
+                    
+                    <div class="settings-form">
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label class="form-label">اسم المنصة</label>
+                                <input type="text" class="form-control" id="platformName" value="Safe Hands">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">البريد الإلكتروني للدعم</label>
+                                <input type="email" class="form-control" id="supportEmail" value="support@safehands.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">رقم هاتف الدعم</label>
+                                <input type="tel" class="form-control" id="supportPhone" value="+201234567890">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">الإشعارات</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    <label for="emailNotifications">إرسال إشعارات عبر البريد الإلكتروني</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="smsNotifications">
+                                    <label for="smsNotifications">إرسال إشعارات عبر الرسائل النصية</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">اللغة</label>
+                                <div class="select-group">
+                                    <select class="form-control" id="language">
+                                        <option value="ar" selected>العربية</option>
+                                        <option value="en">الإنجليزية</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">العملة</label>
+                                <div class="select-group">
+                                    <select class="form-control" id="currency">
+                                        <option value="EGP" selected>الجنيه المصري (ج)</option>
+                                        <option value="USD">الدولار الأمريكي ($)</option>
+                                        <option value="SAR">الريال السعودي (ر.س)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="action-btn" style="margin-top: 20px;">
+                                <i class="fas fa-save"></i>
+                                حفظ الإعدادات
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- قسم المساعدة -->
+            <div id="help" class="content-section">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h2 class="section-title">الأسئلة الشائعة</h2>
+                    </div>
+                    
+                    <div class="faq-container" id="faqContainer">
+                        <!-- السؤال 1 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني إضافة ممرض جديد؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يمكنك إضافة ممرض جديد من خلال:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>الدخول إلى قسم "الممرضون" من القائمة الجانبية</li>
+                                    <li>الضغط على زر "إضافة ممرض" في أعلى الصفحة</li>
+                                    <li>تعبئة البيانات المطلوبة (الاسم، التخصص، رقم الهاتف، etc)</li>
+                                    <li>الضغط على زر "حفظ" لإتمام الإضافة</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يتم حساب إيرادات الممرضين؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يتم حساب إيرادات الممرضين بناءً على:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li>إجمالي قيمة الطلبات المكتملة</li>
+                                    <li>خصم نسبة المنصة (١٥٪ من قيمة الطلب)</li>
+                                    <li>إضافة الحوافز والمكافآت إن وجدت</li>
+                                </ul>
+                                <p style="margin-top: 10px;"><strong>مثال:</strong> طلب بقيمة ١٠٠ جنيه → ٨٥ جنيه للممرض</p>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>ماذا أفعل إذا كان هناك طلب ملغي؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                في حالة إلغاء الطلب، اتبع الخطوات التالية:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>التواصل مع المريض لمعرفة سبب الإلغاء</li>
+                                    <li>التواصل مع الممرض لتأكيد الإلغاء</li>
+                                    <li>تسجيل سبب الإلغاء في النظام</li>
+                                    <li>في حالة الإلغاء قبل التنفيذ، لا يتم خصم أي رسوم</li>
+                                    <li>في حالة الإلغاء بعد التنفيذ، يتم احتساب قيمة الخدمة المقدمة</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني تصدير التقارير؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                يمكنك تصدير التقارير بصيغ متعددة:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li><strong>PDF:</strong> للتقارير الرسمية والعروض التقديمية</li>
+                                    <li><strong>Excel:</strong> لتحليل البيانات وإجراء العمليات الحسابية</li>
+                                    <li><strong>CSV:</strong> لاستيراد البيانات في أنظمة أخرى</li>
+                                </ul>
+                                <p style="margin-top: 10px;">كل ما عليك هو الضغط على زر "تصدير" في قسم التقارير واختيار الصيغة المناسبة.</p>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>ما هي صلاحيات مدير النظام؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                صلاحيات مدير النظام تشمل:
+                                <ul style="margin-top: 10px; margin-right: 20px;">
+                                    <li>إدارة المستخدمين (إضافة، تعديل، حذف)</li>
+                                    <li>التحكم في إعدادات النظام العامة</li>
+                                    <li>عرض جميع التقارير والإحصائيات</li>
+                                    <li>إدارة الطلبات وتحديث حالتها</li>
+                                    <li>التحكم في نسب المنصة والعمولات</li>
+                                    <li>الرد على استفسارات الدعم الفني</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 6 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>كيف يمكنني تغيير كلمة المرور؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                لتغيير كلمة المرور:
+                                <ol style="margin-top: 10px; margin-right: 20px;">
+                                    <li>اضغط على صورة الملف الشخصي في الشريط الجانبي</li>
+                                    <li>اختر "تغيير كلمة المرور" من القائمة</li>
+                                    <li>أدخل كلمة المرور الحالية</li>
+                                    <li>أدخل كلمة المرور الجديدة (٨ أحرف على الأقل)</li>
+                                    <li>تأكيد كلمة المرور الجديدة</li>
+                                    <li>اضغط على "حفظ"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 7 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>متى يتم دفع مستحقات الممرضين؟</span>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>نظام الدفع كالتالي:</p>
+                                <ul style="margin-top: 5px; margin-right: 20px;">
+                                    <li><strong>الدفع الأسبوعي:</strong> كل يوم سبت للمستحقات حتى الخميس السابق</li>
+                                    <li><strong>الحد الأدنى للسحب:</strong> ٥٠٠ جنيه</li>
+                                    <li><strong>طرق الدفع:</strong> تحويل بنكي، محفظة إلكترونية، فودافون كاش</li>
+                                    <li><strong>مدة التوصيل:</strong> ٢٤ ساعة عمل كحد أقصى</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 20px; border-top: 1px solid var(--light-gray);">
+                        <h3 style="margin-bottom: 15px;">اتصل بنا</h3>
+                        <div style="display: grid; gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-phone" style="color: var(--primary);"></i>
+                                <span>+201234567890</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-envelope" style="color: var(--primary);"></i>
+                                <span>support@safehands.com</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-clock" style="color: var(--primary);"></i>
+                                <span>من الساعة 9 صباحاً حتى 5 مساءً (بتوقيت القاهرة)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
+                                <span>القاهرة، مصر</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- التذييل -->
+            <div class="footer">
+                <p>© 2026 Safe Hands - وساطة للتمريض المنزلي | جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </div>
+    <!-- عندما يتم أخذ بيانات من السيرفر -->
+    <!-- نافذة عرض طلبات الممرض -->
+    <div class="modal" id="nurseOrdersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">طلبات الممرض</h2>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="nurse-details">
+                    <div class="nurse-avatar" id="modalNurseAvatar">أ</div>
+                    <div class="nurse-info">
+                        <h3 id="modalNurseName">أحمد محمد</h3>
+                        <div class="nurse-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (24 تقييم)</span>
+                        </div>
+                        <div id="modalNurseInfo">ممرض متخصص في التمريض المنزلي مع خبرة 5 سنوات</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 20px;">الطلبات المقدمة</h3>
+                
+                <div class="orders-list" id="ordersList">
+                    <!-- سيتم تعبئة الطلبات هنا عبر الجافاسكريبت -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- نافذة تفاصيل المريض -->
+    <div class="modal details-modal" id="patientDetailsModal">
+        <div class="modal-content">
+            <div class="details-header">
+                <div class="details-avatar" id="patientDetailsAvatar">م</div>
+                <h2 id="patientDetailsName">محمد أحمد</h2>
+                <p id="patientDetailsStatus">مريض نشط</p>
+            </div>
+            <div class="details-body">
+                <div class="detail-row">
+                    <span class="detail-label">رقم المريض</span>
+                    <span class="detail-value" id="patientDetailsId">#001</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">العمر</span>
+                    <span class="detail-value" id="patientDetailsAge">65 سنة</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">الجنس</span>
+                    <span class="detail-value" id="patientDetailsGender">ذكر</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">رقم الهاتف</span>
+                    <span class="detail-value" id="patientDetailsPhone">01012345678</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">عدد الزيارات</span>
+                    <span class="detail-value" id="patientDetailsVisits">12 زيارة</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">تاريخ التسجيل</span>
+                    <span class="detail-value" id="patientDetailsJoinDate">2024-01-15</span>
+                </div>
+                <div class="detail-row" style="border-bottom: none;">
+                    <span class="detail-label">آخر زيارة</span>
+                    <span class="detail-value" id="patientDetailsLastVisit">2024-03-15</span>
+                </div>
+            </div>
+            <div style="padding: 20px; text-align: center; border-top: 1px solid var(--light-gray);">
+                <button class="action-btn action-btn-edit" onclick="editPatientFromModal()">
+                    <i class="fas fa-edit"></i>
+                    تعديل البيانات
+                </button>
+                <button class="action-btn action-btn-view" style="margin-right: 10px;" onclick="viewPatientOrders()">
+                    <i class="fas fa-eye"></i>
+                    عرض الطلبات
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- نافذة تفاصيل الممرض -->
+    <div class="modal details-modal" id="nurseDetailsModal">
+        <div class="modal-content">
+            <div class="details-header">
+                <div class="details-avatar" id="nurseDetailsAvatar">أ</div>
+                <h2 id="nurseDetailsName">أحمد محمد</h2>
+                <p id="nurseDetailsSpecialty">ممرض متخصص في التمريض المنزلي</p>
+            </div>
+            <div class="details-body">
+                <div class="detail-row">
+                    <span class="detail-label">رقم الممرض</span>
+                    <span class="detail-value" id="nurseDetailsId">#001</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">التقييم</span>
+                    <span class="detail-value" id="nurseDetailsRating">
+                        <span style="color: var(--warning);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            4.7
+                        </span>
+                    </span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">الحالة</span>
+                    <span class="detail-value" id="nurseDetailsStatus">نشط</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">عدد الطلبات</span>
+                    <span class="detail-value" id="nurseDetailsOrdersCount">24 طلب</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">الإيرادات</span>
+                    <span class="detail-value" id="nurseDetailsRevenue">5,400 ج</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">تاريخ الانضمام</span>
+                    <span class="detail-value" id="nurseDetailsJoinDate">2023-06-15</span>
+                </div>
+                <div class="detail-row" style="border-bottom: none;">
+                    <span class="detail-label">آخر طلب</span>
+                    <span class="detail-value" id="nurseDetailsLastOrder">2024-03-15</span>
+                </div>
+            </div>
+            <div style="padding: 20px; text-align: center; border-top: 1px solid var(--light-gray);">
+                <button class="action-btn action-btn-edit" onclick="editNurseFromModal()">
+                    <i class="fas fa-edit"></i>
+                    تعديل البيانات
+                </button>
+                <button class="action-btn action-btn-view" style="margin-right: 10px;" onclick="showNurseOrdersFromModal()">
+                    <i class="fas fa-eye"></i>
+                    عرض الطلبات
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/dashboard-admin.js"></script>
+</body>
+</html>
